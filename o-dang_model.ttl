@@ -1,0 +1,1211 @@
+@prefix : <http://hatespeech.di.unito.it/odang#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix term: <http://purl.org/dc/terms/> .
+@base <http://hatespeech.di.unito.it/odang> .
+
+<http://hatespeech.di.unito.it/odang> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/dcam/memberOf
+dcam:memberOf rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+term:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+term:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+term:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+term:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+term:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/oa#hasBody
+oa:hasBody rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/oa#hasTarget
+oa:hasTarget rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://hatespeech.di.unito.it/odang#agent
+:agent rdf:type owl:ObjectProperty ;
+       owl:equivalentProperty <http://www.w3.org/ns/prov#agent> ;
+       rdfs:domain :Attribution ;
+       rdfs:range :Agent .
+
+
+###  http://hatespeech.di.unito.it/odang#categorizeAs
+:categorizeAs rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#citizenship
+:citizenship rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#describes
+:describes rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty dul:describes .
+
+
+###  http://hatespeech.di.unito.it/odang#evokes
+:evokes rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty <http://www.w3.org/ns/lemon/ontolex#evokes> .
+
+
+###  http://hatespeech.di.unito.it/odang#expresses
+:expresses rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty dul:expresses ,
+                                  <http://www.w3.org/ns/lemon/ontolex#evokes> ;
+           rdfs:domain dul:InformationObject ;
+           rdfs:range dul:Description .
+
+
+###  http://hatespeech.di.unito.it/odang#gender
+:gender rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasAttribute
+:hasAttribute rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasDiscreditForm
+:hasDiscreditForm rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Prejudice ;
+                  rdfs:range :DiscreditForm .
+
+
+###  http://hatespeech.di.unito.it/odang#hasEmbodiment
+:hasEmbodiment rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty <http://purl.org/vocab/frbr/core#embodiment> ;
+               owl:inverseOf :isEmbodimentOf ;
+               rdfs:domain :Expression ;
+               rdfs:range :Manifestation .
+
+
+###  http://hatespeech.di.unito.it/odang#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty :member ;
+           owl:inverseOf :isMemberOf .
+
+
+###  http://hatespeech.di.unito.it/odang#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty dul:hasPart .
+
+
+###  http://hatespeech.di.unito.it/odang#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty dul:hasRole ;
+         owl:inverseOf :isRoleOf ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Group
+                                     :Organization
+                                     :Person
+                                   )
+                     ] ;
+         rdfs:range :Role .
+
+
+###  http://hatespeech.di.unito.it/odang#hasScheme
+:hasScheme rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasTarget
+:hasTarget rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isTargetOf ;
+           rdfs:range :Target .
+
+
+###  http://hatespeech.di.unito.it/odang#hasTopic
+:hasTopic rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#includesAgent
+:includesAgent rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isAgentIn ;
+               rdf:type owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#includesPatient
+:includesPatient rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :isPatientin ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#isAgentIn
+:isAgentIn rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#isBorn
+:isBorn rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#isDescribedBy
+:isDescribedBy rdf:type owl:ObjectProperty ;
+               owl:equivalentProperty dul:isDescribedBy .
+
+
+###  http://hatespeech.di.unito.it/odang#isEmbodimentOf
+:isEmbodimentOf rdf:type owl:ObjectProperty ;
+                owl:equivalentProperty <http://purl.org/vocab/frbr/core#embodimentOf> ;
+                rdfs:domain :Manifestation ;
+                rdfs:range :Expression .
+
+
+###  http://hatespeech.di.unito.it/odang#isEvokedBy
+:isEvokedBy rdf:type owl:ObjectProperty ;
+            owl:equivalentProperty <http://www.w3.org/ns/lemon/ontolex#isEvokedBy> .
+
+
+###  http://hatespeech.di.unito.it/odang#isExpressed
+:isExpressed rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty dul:isConceptExpressedBy ;
+             owl:inverseOf dul:expresses .
+
+
+###  http://hatespeech.di.unito.it/odang#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty dul:isPartOf ;
+          rdfs:range :DataSet .
+
+
+###  http://hatespeech.di.unito.it/odang#isPatientin
+:isPatientin rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#isPublished
+:isPublished rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#isRoleOf
+:isRoleOf rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty dul:isRoleOf ;
+          rdfs:domain :Role ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :Group
+                                     :Organization
+                                     :Person
+                                   )
+                     ] .
+
+
+###  http://hatespeech.di.unito.it/odang#isSenseOf
+:isSenseOf rdf:type owl:ObjectProperty ;
+           owl:equivalentProperty <http://www.w3.org/ns/lemon/ontolex#isSenseOf> .
+
+
+###  http://hatespeech.di.unito.it/odang#isSettingFor
+:isSettingFor rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty dul:isSettingFor .
+
+
+###  http://hatespeech.di.unito.it/odang#isTargetOf
+:isTargetOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Target .
+
+
+###  http://hatespeech.di.unito.it/odang#member
+:member rdf:type owl:ObjectProperty ;
+        rdfs:domain :Group ;
+        rdfs:range :Person .
+
+
+###  http://hatespeech.di.unito.it/odang#occupation
+:occupation rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#partOfSpeech
+:partOfSpeech rdf:type owl:ObjectProperty ;
+              owl:equivalentProperty <http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech> .
+
+
+###  http://hatespeech.di.unito.it/odang#perceivedAs
+:perceivedAs rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#placeOfBirth
+:placeOfBirth rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#qualifiedAssociation
+:qualifiedAssociation rdf:type owl:ObjectProperty ;
+                      owl:equivalentProperty <http://www.w3.org/ns/prov#qualifiedAssociation> .
+
+
+###  http://hatespeech.di.unito.it/odang#qualifiedAttribution
+:qualifiedAttribution rdf:type owl:ObjectProperty ;
+                      owl:equivalentProperty <http://www.w3.org/ns/prov#qualifiedAttribution> ;
+                      rdfs:range :Attribution .
+
+
+###  http://hatespeech.di.unito.it/odang#sense
+:sense rdf:type owl:ObjectProperty ;
+       owl:equivalentProperty <http://www.w3.org/ns/lemon/ontolex#sense> .
+
+
+###  http://hatespeech.di.unito.it/odang#spread
+:spread rdf:type owl:ObjectProperty ;
+        owl:inverseOf :spreadedBy ;
+        rdfs:range :Prejudice .
+
+
+###  http://hatespeech.di.unito.it/odang#spreadedBy
+:spreadedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Prejudice .
+
+
+###  http://hatespeech.di.unito.it/odang#value
+:value rdf:type owl:ObjectProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#wasAnnotated
+:wasAnnotated rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain <http://purl.org/vocab/frbr/core#Expression> .
+
+
+###  http://hatespeech.di.unito.it/odang#wasAssociatedWith
+:wasAssociatedWith rdf:type owl:ObjectProperty ;
+                   owl:equivalentProperty <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                   owl:propertyChainAxiom ( :qualifiedAssociation
+                                            :agent
+                                          ) .
+
+
+###  http://hatespeech.di.unito.it/odang#wasAttributedTo
+:wasAttributedTo rdf:type owl:ObjectProperty ;
+                 owl:equivalentProperty <http://www.w3.org/ns/prov#wasAttributedTo> ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:propertyChainAxiom ( <http://www.w3.org/ns/prov#qualifiedAttribution>
+                                          :agent
+                                        ) .
+
+
+###  http://hatespeech.di.unito.it/odang#wasClusterizedAs
+:wasClusterizedAs rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty <http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf> .
+
+
+###  http://purl.org/dc/terms/created
+term:created rdf:type owl:ObjectProperty ;
+             owl:inverseOf term:creator ;
+             rdfs:domain :Text ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Group
+                                        :Organization
+                                        :Person
+                                      )
+                        ] .
+
+
+###  http://purl.org/dc/terms/creator
+term:creator rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Group
+                                         :Organization
+                                         :Person
+                                       )
+                         ] ;
+             rdfs:range :Text .
+
+
+###  http://purl.org/vocab/frbr/core#embodiment
+<http://purl.org/vocab/frbr/core#embodiment> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/vocab/frbr/core#embodimentOf
+<http://purl.org/vocab/frbr/core#embodimentOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech
+<http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes
+dul:describes rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses
+dul:expresses rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expressesConcept
+dul:expressesConcept rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart
+dul:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole
+dul:hasRole rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptExpressedBy
+dul:isConceptExpressedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDescribedBy
+dul:isDescribedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy
+dul:isExpressedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf
+dul:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf
+dul:isRoleOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor
+dul:isSettingFor rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#evokes
+<http://www.w3.org/ns/lemon/ontolex#evokes> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isEvokedBy
+<http://www.w3.org/ns/lemon/ontolex#isEvokedBy> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf
+<http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isSenseOf
+<http://www.w3.org/ns/lemon/ontolex#isSenseOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#sense
+<http://www.w3.org/ns/lemon/ontolex#sense> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#activity
+<http://www.w3.org/ns/prov#activity> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.w3.org/ns/prov#influencer> .
+
+
+###  http://www.w3.org/ns/prov#agent
+<http://www.w3.org/ns/prov#agent> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#influencer> .
+
+
+###  http://www.w3.org/ns/prov#generated
+<http://www.w3.org/ns/prov#generated> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <http://www.w3.org/ns/prov#influenced> .
+
+
+###  http://www.w3.org/ns/prov#influenced
+<http://www.w3.org/ns/prov#influenced> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#influencer
+<http://www.w3.org/ns/prov#influencer> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#qualifiedAssociation
+<http://www.w3.org/ns/prov#qualifiedAssociation> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <http://www.w3.org/ns/prov#qualifiedInfluence> .
+
+
+###  http://www.w3.org/ns/prov#qualifiedAttribution
+<http://www.w3.org/ns/prov#qualifiedAttribution> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf <http://www.w3.org/ns/prov#qualifiedInfluence> .
+
+
+###  http://www.w3.org/ns/prov#qualifiedGeneration
+<http://www.w3.org/ns/prov#qualifiedGeneration> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://www.w3.org/ns/prov#qualifiedInfluence> .
+
+
+###  http://www.w3.org/ns/prov#qualifiedInfluence
+<http://www.w3.org/ns/prov#qualifiedInfluence> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
+                                              owl:propertyChainAxiom ( <http://www.w3.org/ns/prov#qualifiedAssociation>
+                                                                       <http://www.w3.org/ns/prov#agent>
+                                                                     ) .
+
+
+###  http://www.w3.org/ns/prov#wasAttributedTo
+<http://www.w3.org/ns/prov#wasAttributedTo> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
+                                            owl:propertyChainAxiom ( <http://www.w3.org/ns/prov#qualifiedAttribution>
+                                                                     <http://www.w3.org/ns/prov#agent>
+                                                                   ) .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
+                                           owl:propertyChainAxiom ( <http://www.w3.org/ns/prov#qualifiedGeneration>
+                                                                    <http://www.w3.org/ns/prov#activity>
+                                                                  ) .
+
+
+###  http://www.w3.org/ns/prov#wasInfluencedBy
+<http://www.w3.org/ns/prov#wasInfluencedBy> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://hatespeech.di.unito.it/odang#birthYear
+:birthYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:integer .
+
+
+###  http://hatespeech.di.unito.it/odang#chunk
+:chunk rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#containsHateSpeech
+:containsHateSpeech rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#containsIrony
+:containsIrony rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#containsSarcasm
+:containsSarcasm rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#date
+:date rdf:type owl:DatatypeProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#gender
+:gender rdf:type owl:DatatypeProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasFrame
+:hasFrame rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasId
+:hasId rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasImage
+:hasImage rdf:type owl:DatatypeProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#hasPolarity
+:hasPolarity rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:boolean .
+
+
+###  http://hatespeech.di.unito.it/odang#hasText
+:hasText rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://hatespeech.di.unito.it/odang#hashtag
+:hashtag rdf:type owl:DatatypeProperty .
+
+
+###  http://hatespeech.di.unito.it/odang#language
+:language rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:DatatypeProperty ;
+                                         rdfs:range xsd:anyURI .
+
+
+###  http://www.w3.org/ns/oa#end
+oa:end rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/oa#start
+oa:start rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://hatespeech.di.unito.it/odang#Addressee
+:Addressee rdf:type owl:Class ;
+           rdfs:subClassOf :AgentRole .
+
+
+###  http://hatespeech.di.unito.it/odang#Addresser
+:Addresser rdf:type owl:Class ;
+           rdfs:subClassOf :AgentRole ;
+           rdfs:comment "The agent that sends a message" .
+
+
+###  http://hatespeech.di.unito.it/odang#AdjacencyPair
+:AdjacencyPair rdf:type owl:Class .
+
+
+###  http://hatespeech.di.unito.it/odang#Adjective
+:Adjective rdf:type owl:Class ;
+           owl:equivalentClass <http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective> ;
+           rdfs:subClassOf :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#Adverb
+:Adverb rdf:type owl:Class ;
+        owl:equivalentClass <http://www.lexinfo.net/ontology/3.0/lexinfo#AdverbPOS> ;
+        rdfs:subClassOf :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#AffectiveCompetence
+:AffectiveCompetence rdf:type owl:Class ;
+                     rdfs:subClassOf :DiscreditForm ;
+                     rdfs:comment "Affective competence: competence can also be affective when the immigrant is described as a numb, emotionless person, or a parasitic, describing the individual’s emotional features" .
+
+
+###  http://hatespeech.di.unito.it/odang#Age
+:Age rdf:type owl:Class ;
+     rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Agent
+:Agent rdf:type owl:Class .
+
+
+###  http://hatespeech.di.unito.it/odang#AgentRole
+:AgentRole rdf:type owl:Class ;
+           rdfs:subClassOf :Role ;
+           owl:disjointWith :MessageRole .
+
+
+###  http://hatespeech.di.unito.it/odang#Annotation
+:Annotation rdf:type owl:Class ;
+            owl:equivalentClass dul:Design ,
+                                <http://www.w3.org/ns/lemon/ontolex#LexicalSense> .
+
+
+###  http://hatespeech.di.unito.it/odang#Annotator
+:Annotator rdf:type owl:Class ;
+           rdfs:subClassOf :AgentRole ;
+           rdfs:comment "The agent who evaluated the presence of a phenomenon in a message" .
+
+
+###  http://hatespeech.di.unito.it/odang#Association
+:Association rdf:type owl:Class ;
+             owl:equivalentClass <http://www.w3.org/ns/prov#Association> .
+
+
+###  http://hatespeech.di.unito.it/odang#Attribution
+:Attribution rdf:type owl:Class ;
+             owl:equivalentClass <http://www.w3.org/ns/prov#Attribution> .
+
+
+###  http://hatespeech.di.unito.it/odang#Benevolence
+:Benevolence rdf:type owl:Class ;
+             rdfs:subClassOf :DiscreditForm ;
+             rdfs:comment """acting on behalf of their interests and not one’s own, being
+trustworthy, honest, ethical. In this case the immigrant will be seen as
+a thief, a rapist, a murderer, a criminal and a profiteer: an unreliable
+individual that behaves illegally.""" .
+
+
+###  http://hatespeech.di.unito.it/odang#Church
+:Church rdf:type owl:Class ;
+        rdfs:subClassOf :Organization .
+
+
+###  http://hatespeech.di.unito.it/odang#Citizenship
+:Citizenship rdf:type owl:Class ;
+             rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Competence
+:Competence rdf:type owl:Class ;
+            rdfs:subClassOf :DiscreditForm ;
+            rdfs:comment """it emerges from the experience, knowledge and intelligence
+of an individual. On the competence dimension, an individual is negatively evaluated by accusing him of ignorance, stupidity, lack of prepa ration, incomprehensibility. The immigrant will thus be an imbecile, a goat.""" .
+
+
+###  http://hatespeech.di.unito.it/odang#DataSet
+:DataSet rdf:type owl:Class ;
+         rdfs:subClassOf :Expression .
+
+
+###  http://hatespeech.di.unito.it/odang#DiscreditForm
+:DiscreditForm rdf:type owl:Class .
+
+
+###  http://hatespeech.di.unito.it/odang#DominanceDown
+:DominanceDown rdf:type owl:Class ;
+               rdfs:subClassOf :DiscreditForm ;
+               rdfs:comment """in passive terms (Dominance Down):, immigrant can be described
+as a parasite, a nothing, a slacker who complains.""" .
+
+
+###  http://hatespeech.di.unito.it/odang#DominanceUp
+:DominanceUp rdf:type owl:Class ;
+             rdfs:subClassOf :DiscreditForm ;
+             rdfs:comment """in active terms (Dominance Up): when the immigrant is classified
+as overbearing, dangerous, aggressive, someone who also forcibly demands something he hasn’t deserved.""" .
+
+
+###  http://hatespeech.di.unito.it/odang#EthnicOrigin
+:EthnicOrigin rdf:type owl:Class ;
+              rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Expression
+:Expression rdf:type owl:Class ;
+            owl:equivalentClass <http://purl.org/vocab/frbr/core#Expression> ,
+                                dul:InformationObject .
+
+
+###  http://hatespeech.di.unito.it/odang#FirstPair
+:FirstPair rdf:type owl:Class ;
+           rdfs:subClassOf :MessageRole .
+
+
+###  http://hatespeech.di.unito.it/odang#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Group
+:Group rdf:type owl:Class ;
+       rdfs:subClassOf :Agent .
+
+
+###  http://hatespeech.di.unito.it/odang#HateSpeech
+:HateSpeech rdf:type owl:Class ;
+            rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#HomeCountry
+:HomeCountry rdf:type owl:Class ;
+             rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#International
+:International rdf:type owl:Class ;
+               rdfs:subClassOf :Non-ProfitAssociation .
+
+
+###  http://hatespeech.di.unito.it/odang#Irony
+:Irony rdf:type owl:Class ;
+       rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#LexicalEntry
+:LexicalEntry rdf:type owl:Class ;
+              owl:equivalentClass <http://www.w3.org/ns/lemon/ontolex#LexicalEntry> .
+
+
+###  http://hatespeech.di.unito.it/odang#Local
+:Local rdf:type owl:Class ;
+       rdfs:subClassOf :Non-ProfitAssociation .
+
+
+###  http://hatespeech.di.unito.it/odang#Manifestation
+:Manifestation rdf:type owl:Class ;
+               owl:equivalentClass <http://purl.org/vocab/frbr/core#Manifestation> .
+
+
+###  http://hatespeech.di.unito.it/odang#MessageRole
+:MessageRole rdf:type owl:Class ;
+             rdfs:subClassOf :Role .
+
+
+###  http://hatespeech.di.unito.it/odang#Misogyny
+:Misogyny rdf:type owl:Class ;
+          rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#MoralValue
+:MoralValue rdf:type owl:Class ;
+            rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#National
+:National rdf:type owl:Class ;
+          rdfs:subClassOf :Non-ProfitAssociation .
+
+
+###  http://hatespeech.di.unito.it/odang#Non-ProfitAssociation
+:Non-ProfitAssociation rdf:type owl:Class ;
+                       rdfs:subClassOf :Organization .
+
+
+###  http://hatespeech.di.unito.it/odang#Noun
+:Noun rdf:type owl:Class ;
+      owl:equivalentClass <http://www.lexinfo.net/ontology/3.0/lexinfo#NounPOS> ;
+      rdfs:subClassOf :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#Occupation
+:Occupation rdf:type owl:Class ;
+            rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Offensive
+:Offensive rdf:type owl:Class ;
+           rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#Organization
+:Organization rdf:type owl:Class ;
+              owl:equivalentClass <http://www.w3.org/ns/prov#Organization> ;
+              rdfs:subClassOf :Agent .
+
+
+###  http://hatespeech.di.unito.it/odang#PartOfSpeech
+:PartOfSpeech rdf:type owl:Class ;
+              owl:equivalentClass <http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech> .
+
+
+###  http://hatespeech.di.unito.it/odang#Person
+:Person rdf:type owl:Class ;
+        owl:equivalentClass <http://www.w3.org/ns/prov#Person> ;
+        rdfs:subClassOf :Agent .
+
+
+###  http://hatespeech.di.unito.it/odang#PersonAttribute
+:PersonAttribute rdf:type owl:Class .
+
+
+###  http://hatespeech.di.unito.it/odang#PhysicalFeatures
+:PhysicalFeatures rdf:type owl:Class ;
+                  rdfs:subClassOf :DiscreditForm ;
+                  rdfs:comment "Physical features: dirty, sick, ugly, disgusting, black, dangerous for the health of the citizens." .
+
+
+###  http://hatespeech.di.unito.it/odang#PhysicalTraits
+:PhysicalTraits rdf:type owl:Class ;
+                rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Place
+:Place rdf:type owl:Class .
+
+
+###  http://hatespeech.di.unito.it/odang#PoliticalParty
+:PoliticalParty rdf:type owl:Class ;
+                rdfs:subClassOf :Organization .
+
+
+###  http://hatespeech.di.unito.it/odang#PoliticalStance
+:PoliticalStance rdf:type owl:Class ;
+                 rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Prejudice
+:Prejudice rdf:type owl:Class .
+
+
+###  http://hatespeech.di.unito.it/odang#ProfessedReligion
+:ProfessedReligion rdf:type owl:Class ;
+                   rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Reply
+:Reply rdf:type owl:Class ;
+       rdfs:subClassOf :MessageRole .
+
+
+###  http://hatespeech.di.unito.it/odang#Role
+:Role rdf:type owl:Class ;
+      owl:disjointWith <http://www.w3.org/ns/lemon/ontolex#LexicalConcept> .
+
+
+###  http://hatespeech.di.unito.it/odang#SexualOrientation
+:SexualOrientation rdf:type owl:Class ;
+                   rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Situation
+:Situation rdf:type owl:Class ;
+           owl:equivalentClass dul:Situation .
+
+
+###  http://hatespeech.di.unito.it/odang#SocialMediaPost
+:SocialMediaPost rdf:type owl:Class ;
+                 rdfs:subClassOf :Manifestation .
+
+
+###  http://hatespeech.di.unito.it/odang#SpokenLanguage
+:SpokenLanguage rdf:type owl:Class ;
+                rdfs:subClassOf :PersonAttribute .
+
+
+###  http://hatespeech.di.unito.it/odang#Stance
+:Stance rdf:type owl:Class ;
+        rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#Stereotype
+:Stereotype rdf:type owl:Class ;
+            rdfs:subClassOf :Annotation .
+
+
+###  http://hatespeech.di.unito.it/odang#Target
+:Target rdf:type owl:Class ;
+        rdfs:subClassOf :AgentRole ;
+        rdfs:comment "The agent that receives a message" .
+
+
+###  http://hatespeech.di.unito.it/odang#Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf :Expression .
+
+
+###  http://hatespeech.di.unito.it/odang#TradeUnion
+:TradeUnion rdf:type owl:Class ;
+            rdfs:subClassOf :Organization .
+
+
+###  http://hatespeech.di.unito.it/odang#Tweet
+:Tweet rdf:type owl:Class ;
+       rdfs:subClassOf :SocialMediaPost .
+
+
+###  http://hatespeech.di.unito.it/odang#Verb
+:Verb rdf:type owl:Class ;
+      owl:equivalentClass <http://www.lexinfo.net/ontology/3.0/lexinfo#VerbPOS> ;
+      rdfs:subClassOf :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#Word
+:Word rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#LexicalEntry> .
+
+
+###  http://purl.org/dc/terms/DCMIType
+term:DCMIType rdf:type owl:Class ;
+              owl:equivalentClass <http://purl.org/vocab/frbr/core#Expression> .
+
+
+###  http://purl.org/vocab/frbr/core#Expression
+<http://purl.org/vocab/frbr/core#Expression> rdf:type owl:Class .
+
+
+###  http://purl.org/vocab/frbr/core#Manifestation
+<http://purl.org/vocab/frbr/core#Manifestation> rdf:type owl:Class .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective
+<http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective> rdf:type owl:Class .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#AdverbPOS
+<http://www.lexinfo.net/ontology/3.0/lexinfo#AdverbPOS> rdf:type owl:Class .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#NounPOS
+<http://www.lexinfo.net/ontology/3.0/lexinfo#NounPOS> rdf:type owl:Class .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech
+<http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech> rdf:type owl:Class .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#VerbPOS
+<http://www.lexinfo.net/ontology/3.0/lexinfo#VerbPOS> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
+dul:Description rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Design
+dul:Design rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+dul:InformationObject rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation
+dul:Situation rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalConcept
+<http://www.w3.org/ns/lemon/ontolex#LexicalConcept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalEntry
+<http://www.w3.org/ns/lemon/ontolex#LexicalEntry> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalSense
+<http://www.w3.org/ns/lemon/ontolex#LexicalSense> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Association
+<http://www.w3.org/ns/prov#Association> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Attribution
+<http://www.w3.org/ns/prov#Attribution> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Organization
+<http://www.w3.org/ns/prov#Organization> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Person
+<http://www.w3.org/ns/prov#Person> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://hatespeech.di.unito.it/odang#aBlankNode
+:aBlankNode rdf:type owl:NamedIndividual ,
+                     :HateSpeech ;
+            rdfs:label "a custom blank node" .
+
+
+###  http://hatespeech.di.unito.it/odang#adjective
+:adjective rdf:type owl:NamedIndividual ,
+                    :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#adverb
+:adverb rdf:type owl:NamedIndividual ,
+                 :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#an
+:an rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#asf
+:asf rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#asm
+:asm rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#cazzo
+:cazzo rdf:type owl:NamedIndividual ,
+                :Word ;
+       :expresses :asm ,
+                  :cds .
+
+
+###  http://hatespeech.di.unito.it/odang#cds
+:cds rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#ddf
+:ddf rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#ddp
+:ddp rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#dmc
+:dmc rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#gold-standard
+:gold-standard rdf:type owl:NamedIndividual ,
+                        :Group .
+
+
+###  http://hatespeech.di.unito.it/odang#is
+:is rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#noun
+:noun rdf:type owl:NamedIndividual ,
+               :PartOfSpeech .
+
+
+###  http://hatespeech.di.unito.it/odang#om
+:om rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#or
+:or rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#pa
+:pa rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#pr
+:pr rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#ps
+:ps rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#qas
+:qas rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#rci
+:rci rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#re
+:re rdf:type owl:NamedIndividual ,
+             :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#svp
+:svp rdf:type owl:NamedIndividual ,
+              :Offensive .
+
+
+###  http://hatespeech.di.unito.it/odang#verb
+:verb rdf:type owl:NamedIndividual ,
+               :PartOfSpeech .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/dcmitype> term:title "DCMI Type Vocabulary"@en ;
+                              term:modified "2012-06-14"^^xsd:date ;
+                              term:publisher <http://purl.org/dc/aboutdcmi#DCMI> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Adjective
+                :Adverb
+                :Noun
+                :Verb
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AffectiveCompetence
+                :Benevolence
+                :Competence
+                :DominanceDown
+                :DominanceUp
+                :PhysicalFeatures
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Age
+                :EthnicOrigin
+                :Gender
+                :HomeCountry
+                :PhysicalTraits
+                :PoliticalStance
+                :ProfessedReligion
+                :SexualOrientation
+                :SpokenLanguage
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Group
+                :Organization
+                :Person
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HateSpeech
+                :Irony
+                :Misogyny
+                :MoralValue
+                :Stance
+                :Stereotype
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :International
+                :Local
+                :National
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
