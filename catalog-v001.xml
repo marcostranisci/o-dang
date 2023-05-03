@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.lexinfo.net/ontology/3.0/lexinfo" uri="http://lexinfo.net/ontology/3.0/lexinfo"/>
+    <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.org/spar/frbr/2018-03-29" uri="http://purl.org/spar/frbr"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1678375552210" name="https://purl.archive.org/o-dang" uri="o-dang.owl"/>
+    </group>
+</catalog>
