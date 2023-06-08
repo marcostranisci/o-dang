@@ -1,5 +1,4 @@
 [PrefixDeclaration]
-:		https://purl.archive.org/o-dang#
 dc:		http://purl.org/dc/elements/1.1/
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -8,204 +7,205 @@ xml:		http://www.w3.org/XML/1998/namespace
 xsd:		http://www.w3.org/2001/XMLSchema#
 obda:		https://w3id.org/obda/vocabulary#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
+odang:		https://purl.archive.org/o-dang#
 skos1:		http://www.w3.org/2008/05/skos#
 terms:		http://purl.org/dc/terms/
 
 [MappingDeclaration] @collection [[
 mappingId	mapping--1781976523
-target		:{anonymized_tweet_id} :evokes :joy . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:joy . 
 source		select distinct anonymized_tweet_id,lemma,joy, data_type from twt_emo where data_type = 'training' and  joy = 1
 
 mappingId	mapping-1536328427
-target		:{entity} wdt:P802 :{P802} . 
+target		odang:{entity} wdt:P802 odang:{P802} . 
 source		select distinct * from P802
 
 mappingId	mapping--1668597440
-target		:{entity} wdt:P1412 :{P1412} . 
+target		odang:{entity} wdt:P1412 odang:{P1412} . 
 source		select distinct * from P1412
 
 mappingId	mapping--2089830566
-target		:{entity} wdt:P25 :{P25} . 
+target		odang:{entity} wdt:P25 odang:{P25} . 
 source		select distinct * from P25
 
 mappingId	mapping--1582090238
-target		:{entity} wdt:P937 :{P937} . 
+target		odang:{entity} wdt:P937 odang:{P937} . 
 source		select distinct * from P937
 
 mappingId	mapping-1235522448
-target		:{entity} wdt:P21 :{P21} . 
+target		odang:{entity} wdt:P21 odang:{P21} . 
 source		select distinct * from P21
 
 mappingId	mapping-1363587590
-target		:entity wdt:P40 :{P40} . 
+target		odang:entity wdt:P40 odang:{P40} . 
 source		select distinct * from P40
 
 mappingId	mapping-212832521
-target		:{sit} :isSettingFor :named-entity , :{twt} , :{adj} ; :refersTo :{pers} . 
+target		odang:{sit} odang:isSettingFor odang:named-entity , odang:{twt} , odang:{adj} ; odang:refersTo odang:{pers} . 
 source		select distinct Q1.sit as sit, Q1.twt as twt, Q1.pers as pers, Q1.adj as adj, Q1.dt as dt from (select training_textual.anonymized_tweet_id as twt, training_textual.data_type as dt, training_textual.adjacency as adj, training_textual.situation as sit , refersTo.entity as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is not null and Q1.dt ='training'
 
 mappingId	mapping--341920205
-target		:{entity} wdt:P119 :{P119} . 
+target		odang:{entity} wdt:P119 odang:{P119} . 
 source		select distinct * from P119
 
 mappingId	mapping--530759866
-target		:{entity} wdt:P20 :{P20} . 
+target		odang:{entity} wdt:P20 odang:{P20} . 
 source		select distinct * from P20
 
 mappingId	mapping-705442329
-target		:{entity} wdt:P2632 :{P2632} . 
+target		odang:{entity} wdt:P2632 odang:{P2632} . 
 source		select distinct * from P2632
 
 mappingId	mapping-1992691478
-target		:{label} :defines :hate-speech . 
+target		odang:{label} odang:defines odang:hate-speech . 
 source		select distinct * from training_textual where label = 1 and data_type = 'training'
 
 mappingId	mapping-84479077
-target		:{entity} wdt:P108 :{P108} . 
+target		odang:{entity} wdt:P108 odang:{P108} . 
 source		select distinct * from P108
 
 mappingId	mapping--1721860652
-target		:entity wdt:P27 :{P27} . 
+target		odang:entity wdt:P27 odang:{P27} . 
 source		select distinct * from P27
 
 mappingId	mapping-1818572349
-target		:{entity} wdt:P172 :{P172} . 
+target		odang:{entity} wdt:P172 odang:{P172} . 
 source		select distinct * from P172
 
 mappingId	mapping-2083300912
-target		:entity wdt:P569 :{P569} . 
+target		odang:entity wdt:P569 odang:{P569} . 
 source		select distinct * from P569
 
 mappingId	mapping-629874230
-target		:{anonymized_tweet_id} :evokes :disgust . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:disgust . 
 source		select distinct anonymized_tweet_id,lemma,disgust, data_type from twt_emo where data_type = 'training' and  disgust = 1
 
 mappingId	mapping--475791074
-target		:{anonymized_tweet_id} :expresses :{label} . 
+target		odang:{anonymized_tweet_id} odang:expresses odang:{label} . 
 source		select distinct * from training_textual where label = 0 and data_type = 'training'
 
 mappingId	mapping--1005067899
-target		:{entity} wdt:P19 :{P19} . 
+target		odang:{entity} wdt:P19 odang:{P19} . 
 source		select distinct * from P19
 
 mappingId	mapping--1368312020
-target		:{twt} :hasRole :{adj} . 
+target		odang:{twt} odang:hasRole odang:{adj} . 
 source		select distinct Q1.sit as sit, Q1.twt as twt, Q1.pers as pers, Q1.adj as adj, Q1.dt as dt from (select training_textual.anonymized_tweet_id as twt, training_textual.data_type as dt, training_textual.adjacency as adj, training_textual.situation as sit , refersTo.entity as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is not null and Q1.dt ='training'
 
 mappingId	mapping--514673597
-target		:{entity} wdt:P1066 :{P1066} . 
+target		odang:{entity} wdt:P1066 odang:{P1066} . 
 source		select distinct * from P1066
 
 mappingId	mapping--440964830
-target		:{lemma} :evokes :{category} ; :offensivenessScore {offensiveness_score}^^xsd:long . 
+target		odang:{lemma} odang:evokes odang:{category} ; odang:offensivenessScore {offensiveness_score}^^xsd:long . 
 source		select distinct * from twt_hurt where data_type = 'training'
 
 mappingId	mapping-1036004136
-target		:{entity} wdt:P611 :{P611} . 
+target		odang:{entity} wdt:P611 odang:{P611} . 
 source		select distinct * from P611
 
 mappingId	mapping-113408116
-target		:{entity} wdt:P1038 :{P1038} . 
+target		odang:{entity} wdt:P1038 odang:{P1038} . 
 source		select distinct * from P1038
 
 mappingId	mapping--1012482864
-target		:{entity} wdt:P106 :{P106} . 
+target		odang:{entity} wdt:P106 odang:{P106} . 
 source		select distinct * from P106
 
 mappingId	mapping--79288597
-target		:entity wdt:P53 :{P53} . 
+target		odang:entity wdt:P53 odang:{P53} . 
 source		select distinct * from P53
 
 mappingId	mapping-1342033129
-target		:{entity} wdt:P166 :{P166} . 
+target		odang:{entity} wdt:P166 odang:{P166} . 
 source		select distinct * from P166
 
 mappingId	mapping-154775860
-target		:entity wdt:P551 :{P551} . 
+target		odang:entity wdt:P551 odang:{P551} . 
 source		select distinct * from P551
 
 mappingId	mapping-1090347200
-target		:{entity} wdt:P184 :{P184} . 
+target		odang:{entity} wdt:P184 odang:{P184} . 
 source		select distinct * from P184
 
 mappingId	mapping-1305568429
-target		:{entity} wdt:P22 :{P22} . 
+target		odang:{entity} wdt:P22 odang:{P22} . 
 source		select distinct * from P22
 
 mappingId	mapping--1965507831
-target		:{anonymized_tweet_id} :evokes :anger . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:anger . 
 source		select distinct anonymized_tweet_id,lemma,anger,data_type from twt_emo where anger = 1 and data_type = 'training'
 
 mappingId	mapping--1921829575
-target		:{anonymized_tweet_id} :hasPart :{lemma} . 
+target		odang:{anonymized_tweet_id} odang:hasPart odang:{lemma} . 
 source		select distinct * from twt_hurt where data_type = 'training'
 
 mappingId	mapping--642998375
-target		:entity wdt:P39 :{P39} . 
+target		odang:entity wdt:P39 odang:{P39} . 
 source		select distinct * from P39
 
 mappingId	mapping--1537516842
-target		:{pers} :hasRole :named-entity . 
+target		odang:{pers} odang:hasRole odang:named-entity . 
 source		select distinct Q1.sit as sit, Q1.twt as twt, Q1.pers as pers, Q1.adj as adj, Q1.dt as dt from (select training_textual.anonymized_tweet_id as twt, training_textual.data_type as dt, training_textual.adjacency as adj, training_textual.situation as sit , refersTo.entity as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is not null and Q1.dt ='training'
 
 mappingId	mapping-1620936552
-target		:{anonymized_tweet_id} :evokes :fear . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:fear . 
 source		select distinct anonymized_tweet_id,lemma,fear, data_type from twt_emo where data_type = 'training' and  fear = 1
 
 mappingId	mapping-782278169
-target		:{entity} wdt:P26 :{P26} . 
+target		odang:{entity} wdt:P26 odang:{P26} . 
 source		select distinct * from P26
 
 mappingId	mapping-2131388007
-target		:{anonymized_tweet_id} :evokes :surprise . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:surprise . 
 source		select distinct anonymized_tweet_id,lemma,surprise, data_type from twt_emo where data_type = 'training' and  surprise = 1
 
 mappingId	mapping--88375914
-target		:{anonymized_tweet_id} :expresses :{label} . 
+target		odang:{anonymized_tweet_id} odang:expresses odang:{label} . 
 source		select distinct * from training_textual where label = 1 and data_type = 'training'
 
 mappingId	mapping-819222102
-target		:{entity} wdt:P6886 :{P6886} . 
+target		odang:{entity} wdt:P6886 odang:{P6886} . 
 source		select distinct * from P6886
 
 mappingId	mapping--1568290575
-target		:{entity} wdt:P945 :{P945} . 
+target		odang:{entity} wdt:P945 odang:{P945} . 
 source		select distinct * from P945
 
 mappingId	mapping--1295208645
-target		:{anonymized_tweet_id} :evokes :trust . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:trust . 
 source		select distinct anonymized_tweet_id,lemma,trust , data_type from twt_emo where data_type = 'training' and  trust = 1
 
 mappingId	mapping-1183797799
-target		:entity wdt:P463 :{P463} . 
+target		odang:entity wdt:P463 odang:{P463} . 
 source		select distinct * from P463
 
 mappingId	mapping-1399476611
-target		:entity wdt:P3373 :{P3373} . 
+target		odang:entity wdt:P3373 odang:{P3373} . 
 source		select distinct * from P3373
 
 mappingId	mapping--337198331
-target		:{anonymized_tweet_id} :evokes :anticipation . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:anticipation . 
 source		select distinct anonymized_tweet_id,lemma,anticipation, data_type from twt_emo where data_type = 'training' and anticipation = 1
 
 mappingId	mapping--1804650143
-target		:{entity} wdt:P102 :{P102} . 
+target		odang:{entity} wdt:P102 odang:{P102} . 
 source		select distinct * from P102
 
 mappingId	mapping--910868875
-target		:{entity} wdt:P103 :{P103} . 
+target		odang:{entity} wdt:P103 odang:{P103} . 
 source		select distinct * from P103
 
 mappingId	mapping--1634024340
-target		:{anonymized_tweet_id} :evokes :sadness . 
+target		odang:{anonymized_tweet_id} odang:evokes odang:sadness . 
 source		select distinct anonymized_tweet_id,lemma,sadness, data_type from twt_emo where data_type = 'training' and  sadness = 1
 
 mappingId	mapping--1172729425
-target		:{sit} :isSettingFor :{adj} , :{twt} . 
+target		odang:{sit} odang:isSettingFor odang:{adj} , odang:{twt} . 
 source		select distinct Q1.sit as sit, Q1.twt as twt, Q1.pers as pers, Q1.dt as dt,Q1.adj as adj from (select training_textual.anonymized_tweet_id as twt, training_textual.data_type as dt, training_textual.adjacency as adj, training_textual.situation as sit , refersTo.entity as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is null and Q1.dt = 'training'
 
 mappingId	mapping--851903919
-target		:{twt} :hasRole :{adj} . 
+target		odang:{twt} odang:hasRole odang:{adj} . 
 source		select distinct Q1.sit as sit, Q1.twt as twt, Q1.pers as pers, Q1.dt as dt,Q1.adj as adj from (select training_textual.anonymized_tweet_id as twt, training_textual.data_type as dt, training_textual.adjacency as adj, training_textual.situation as sit , refersTo.entity as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is null and Q1.dt = 'training'
 ]]
 

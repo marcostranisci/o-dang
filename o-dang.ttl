@@ -7,9 +7,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix odang: <https://purl.archive.org/o-dang#> .
 @prefix skos1: <http://www.w3.org/2008/05/skos#> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@base <https://purl.archive.org/o-dang#> .
+@base <https://purl.archive.org/o-dang> .
 
 <https://purl.archive.org/o-dang> rdf:type owl:Ontology ;
                                    dc:creator "Marco Antonio Stranisci"@en ;
@@ -34,465 +35,465 @@ terms:title rdf:type owl:AnnotationProperty .
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#gender
 <http://www.lexinfo.net/ontology/3.0/lexinfo#gender> rdf:type owl:ObjectProperty ;
                                                      owl:equivalentProperty wdt:P21 ;
-                                                     rdfs:subPropertyOf :biographicalInformation .
+                                                     rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#defines
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#defines> rdf:type owl:ObjectProperty ;
-                                                                owl:equivalentProperty :defines .
+                                                                owl:equivalentProperty odang:defines .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses> rdf:type owl:ObjectProperty ;
-                                                                  owl:equivalentProperty :expresses .
+                                                                  owl:equivalentProperty odang:expresses .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart> rdf:type owl:ObjectProperty ;
-                                                                owl:equivalentProperty :hasPart .
+                                                                owl:equivalentProperty odang:hasPart .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole> rdf:type owl:ObjectProperty ;
-                                                                owl:equivalentProperty :hasRole .
+                                                                owl:equivalentProperty odang:hasRole .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting> rdf:type owl:ObjectProperty ;
-                                                                   owl:equivalentProperty :hasSetting .
+                                                                   owl:equivalentProperty odang:hasSetting .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy> rdf:type owl:ObjectProperty ;
-                                                                      owl:equivalentProperty :isExpressedBy .
+                                                                      owl:equivalentProperty odang:isExpressedBy .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf> rdf:type owl:ObjectProperty ;
-                                                                 owl:equivalentProperty :isPartOf .
+                                                                 owl:equivalentProperty odang:isPartOf .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf> rdf:type owl:ObjectProperty ;
-                                                                 owl:equivalentProperty :isRoleOf .
+                                                                 owl:equivalentProperty odang:isRoleOf .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> rdf:type owl:ObjectProperty ;
-                                                                     owl:equivalentProperty :isSettingFor .
+                                                                     owl:equivalentProperty odang:isSettingFor .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#evokes
 <http://www.w3.org/ns/lemon/ontolex#evokes> rdf:type owl:ObjectProperty ;
-                                            owl:equivalentProperty :evokes .
+                                            owl:equivalentProperty odang:evokes .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#isEvokedBy
 <http://www.w3.org/ns/lemon/ontolex#isEvokedBy> rdf:type owl:ObjectProperty ;
-                                                owl:equivalentProperty :isEvokedBy .
+                                                owl:equivalentProperty odang:isEvokedBy .
 
 
 ###  http://www.wikidata.org/prop/direct/P102
 wdt:P102 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :member ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:member ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P103
 wdt:P103 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :nativeLanguage ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:nativeLanguage ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P1038
 wdt:P1038 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :relative ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:relative ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P106
 wdt:P106 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :occupation ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:occupation ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P1066
 wdt:P1066 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :studentOf ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:studentOf ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P108
 wdt:P108 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :wikidataProperties .
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P119
 wdt:P119 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :wikidataProperties .
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P1317
 wdt:P1317 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :floruit ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:floruit ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P1412
 wdt:P1412 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :language ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:language ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P166
 wdt:P166 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :wikidataProperties .
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P172
 wdt:P172 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :ethnicGroup ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:ethnicGroup ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P184
 wdt:P184 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :doctoralAdvisor ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:doctoralAdvisor ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P19
 wdt:P19 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :placeOfBirth ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:placeOfBirth ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P20
 wdt:P20 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :placeOfDeath ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:placeOfDeath ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P21
 wdt:P21 rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :wikidataProperties .
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P22
 wdt:P22 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :father ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:father ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P25
 wdt:P25 rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :wikidataProperties .
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P26
 wdt:P26 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :spouse ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:spouse ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P2632
 wdt:P2632 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :placeOfDetention ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:placeOfDetention ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P27
 wdt:P27 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :citizenship ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:citizenship ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P3373
 wdt:P3373 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :sibling ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:sibling ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P39
 wdt:P39 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :positionHeld ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:positionHeld ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P40
 wdt:P40 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :child ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:child ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P463
 wdt:P463 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :member ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:member ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P53
 wdt:P53 rdf:type owl:ObjectProperty ;
-        owl:equivalentProperty :family ;
-        rdfs:subPropertyOf :wikidataProperties .
+        owl:equivalentProperty odang:family ;
+        rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P551
 wdt:P551 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :wikidataProperties .
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P569
 wdt:P569 rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :wikidataProperties .
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P611
 wdt:P611 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :religiousOrder ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:religiousOrder ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P6886
 wdt:P6886 rdf:type owl:ObjectProperty ;
-          owl:equivalentProperty :language ;
-          rdfs:subPropertyOf :wikidataProperties .
+          owl:equivalentProperty odang:language ;
+          rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P802
 wdt:P802 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :student ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:student ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P937
 wdt:P937 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :workLocation ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:workLocation ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  http://www.wikidata.org/prop/direct/P945
 wdt:P945 rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty :allegiance ;
-         rdfs:subPropertyOf :wikidataProperties .
+         owl:equivalentProperty odang:allegiance ;
+         rdfs:subPropertyOf odang:wikidataProperties .
 
 
 ###  https://purl.archive.org/o-dang#allegiance
-:allegiance rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :biographicalInformation .
+odang:allegiance rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#biographicalInformation
-:biographicalInformation rdf:type owl:ObjectProperty .
+odang:biographicalInformation rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#birthCountry
-:birthCountry rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :biographicalInformation .
+odang:birthCountry rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#birthYear
-:birthYear rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :biographicalInformation .
+odang:birthYear rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#child
-:child rdf:type owl:ObjectProperty ;
-       rdfs:subPropertyOf :biographicalInformation .
+odang:child rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#citizenship
-:citizenship rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :biographicalInformation .
+odang:citizenship rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#deathCountry
-:deathCountry rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :biographicalInformation .
+odang:deathCountry rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#defines
-:defines rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isDefinedIn ;
-         rdfs:domain :Description ;
-         rdfs:range :Concept .
+odang:defines rdf:type owl:ObjectProperty ;
+              owl:inverseOf odang:isDefinedIn ;
+              rdfs:domain odang:Description ;
+              rdfs:range odang:Concept .
 
 
 ###  https://purl.archive.org/o-dang#doctoralAdvisor
-:doctoralAdvisor rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :biographicalInformation .
+odang:doctoralAdvisor rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#ethnicGroup
-:ethnicGroup rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :biographicalInformation .
+odang:ethnicGroup rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#evokes
-:evokes rdf:type owl:ObjectProperty ;
-        owl:inverseOf :isEvokedBy .
+odang:evokes rdf:type owl:ObjectProperty ;
+             owl:inverseOf odang:isEvokedBy .
 
 
 ###  https://purl.archive.org/o-dang#expresses
-:expresses rdf:type owl:ObjectProperty ;
-           owl:inverseOf :isExpressedBy ;
-           rdfs:domain :InformationObject ;
-           rdfs:range :Description .
+odang:expresses rdf:type owl:ObjectProperty ;
+                owl:inverseOf odang:isExpressedBy ;
+                rdfs:domain odang:InformationObject ;
+                rdfs:range odang:Description .
 
 
 ###  https://purl.archive.org/o-dang#family
-:family rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :biographicalInformation .
+odang:family rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#father
-:father rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :biographicalInformation .
+odang:father rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#floruit
-:floruit rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :biographicalInformation .
+odang:floruit rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#hasPart
-:hasPart rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isPartOf .
+odang:hasPart rdf:type owl:ObjectProperty ;
+              owl:inverseOf odang:isPartOf .
 
 
 ###  https://purl.archive.org/o-dang#hasRole
-:hasRole rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isRoleOf .
+odang:hasRole rdf:type owl:ObjectProperty ;
+              owl:inverseOf odang:isRoleOf .
 
 
 ###  https://purl.archive.org/o-dang#hasSetting
-:hasSetting rdf:type owl:ObjectProperty ;
-            owl:inverseOf :isSettingFor ;
-            rdfs:range :CommunicativeSituation .
+odang:hasSetting rdf:type owl:ObjectProperty ;
+                 owl:inverseOf odang:isSettingFor ;
+                 rdfs:range odang:CommunicativeSituation .
 
 
 ###  https://purl.archive.org/o-dang#hasValue
-:hasValue rdf:type owl:ObjectProperty .
+odang:hasValue rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#isDefinedIn
-:isDefinedIn rdf:type owl:ObjectProperty ;
-             owl:inverseOf :isDefinedIn .
+odang:isDefinedIn rdf:type owl:ObjectProperty ;
+                  owl:inverseOf odang:isDefinedIn .
 
 
 ###  https://purl.archive.org/o-dang#isEmbodimentOf
-:isEmbodimentOf rdf:type owl:ObjectProperty ;
-                rdfs:domain :Manifestation ;
-                rdfs:range :Description .
+odang:isEmbodimentOf rdf:type owl:ObjectProperty ;
+                     rdfs:domain odang:Manifestation ;
+                     rdfs:range odang:Description .
 
 
 ###  https://purl.archive.org/o-dang#isEvokedBy
-:isEvokedBy rdf:type owl:ObjectProperty .
+odang:isEvokedBy rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#isExpressedBy
-:isExpressedBy rdf:type owl:ObjectProperty ;
-               rdfs:domain :Description ;
-               rdfs:range :InformationObject .
+odang:isExpressedBy rdf:type owl:ObjectProperty ;
+                    rdfs:domain odang:Description ;
+                    rdfs:range odang:InformationObject .
 
 
 ###  https://purl.archive.org/o-dang#isPartOf
-:isPartOf rdf:type owl:ObjectProperty .
+odang:isPartOf rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#isRoleOf
-:isRoleOf rdf:type owl:ObjectProperty .
+odang:isRoleOf rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#isSettingFor
-:isSettingFor rdf:type owl:ObjectProperty ;
-              rdfs:domain :CommunicativeSituation ;
-              rdfs:range :Agent ,
-                         :InformationObject ,
-                         :Role .
+odang:isSettingFor rdf:type owl:ObjectProperty ;
+                   rdfs:domain odang:CommunicativeSituation ;
+                   rdfs:range odang:Agent ,
+                              odang:InformationObject ,
+                              odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#language
-:language rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :biographicalInformation .
+odang:language rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#member
-:member rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :biographicalInformation .
+odang:member rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#nativeLanguage
-:nativeLanguage rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :biographicalInformation .
+odang:nativeLanguage rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#occupation
-:occupation rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :biographicalInformation .
+odang:occupation rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#placeOfBirth
-:placeOfBirth rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :biographicalInformation .
+odang:placeOfBirth rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#placeOfDeath
-:placeOfDeath rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :biographicalInformation .
+odang:placeOfDeath rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#placeOfDetention
-:placeOfDetention rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :biographicalInformation .
+odang:placeOfDetention rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#positionHeld
-:positionHeld rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :biographicalInformation .
+odang:positionHeld rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#refersTo
-:refersTo rdf:type owl:ObjectProperty .
+odang:refersTo rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#relative
-:relative rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :biographicalInformation .
+odang:relative rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#religiousOrder
-:religiousOrder rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :biographicalInformation .
+odang:religiousOrder rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#sibling
-:sibling rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :biographicalInformation .
+odang:sibling rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#spouse
-:spouse rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :biographicalInformation .
+odang:spouse rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#student
-:student rdf:type owl:ObjectProperty ;
-         rdfs:subPropertyOf :biographicalInformation .
+odang:student rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#studentOf
-:studentOf rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :biographicalInformation .
+odang:studentOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf odang:biographicalInformation .
 
 
 ###  https://purl.archive.org/o-dang#wikidataProperties
-:wikidataProperties rdf:type owl:ObjectProperty .
+odang:wikidataProperties rdf:type owl:ObjectProperty .
 
 
 ###  https://purl.archive.org/o-dang#workLocation
-:workLocation rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :biographicalInformation .
+odang:workLocation rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf odang:biographicalInformation .
 
 
 #################################################################
@@ -500,7 +501,7 @@ wdt:P945 rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://purl.archive.org/o-dang#offensivenessScore
-:offensivenessScore rdf:type owl:DatatypeProperty .
+odang:offensivenessScore rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -509,42 +510,42 @@ wdt:P945 rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/vocab/frbr/core#Expression
 <http://purl.org/vocab/frbr/core#Expression> rdf:type owl:Class ;
-                                             owl:equivalentClass :Expression .
+                                             owl:equivalentClass odang:Expression .
 
 
 ###  http://purl.org/vocab/frbr/core#Manifestation
 <http://purl.org/vocab/frbr/core#Manifestation> rdf:type owl:Class ;
-                                                owl:equivalentClass :Manifestation .
+                                                owl:equivalentClass odang:Manifestation .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective
 <http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective> rdf:type owl:Class ;
-                                                        owl:equivalentClass :Adjective .
+                                                        owl:equivalentClass odang:Adjective .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adverb
 <http://www.lexinfo.net/ontology/3.0/lexinfo#Adverb> rdf:type owl:Class ;
-                                                     owl:equivalentClass :Adverb .
+                                                     owl:equivalentClass odang:Adverb .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#Noun
 <http://www.lexinfo.net/ontology/3.0/lexinfo#Noun> rdf:type owl:Class ;
-                                                   owl:equivalentClass :Name .
+                                                   owl:equivalentClass odang:Name .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#Verb
 <http://www.lexinfo.net/ontology/3.0/lexinfo#Verb> rdf:type owl:Class ;
-                                                   owl:equivalentClass :Verb .
+                                                   owl:equivalentClass odang:Verb .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> rdf:type owl:Class ;
-                                                              owl:equivalentClass :Agent .
+                                                              owl:equivalentClass odang:Agent .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> rdf:type owl:Class ;
-                                                                owl:equivalentClass :Concept .
+                                                                owl:equivalentClass odang:Concept .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
@@ -558,140 +559,140 @@ wdt:P945 rdf:type owl:ObjectProperty ;
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> rdf:type owl:Class ;
-                                                                          owl:equivalentClass :InformationObject .
+                                                                          owl:equivalentClass odang:InformationObject .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role> rdf:type owl:Class ;
-                                                             owl:equivalentClass :Role .
+                                                             owl:equivalentClass odang:Role .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation
 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> rdf:type owl:Class ;
-                                                                  owl:equivalentClass :Situation .
+                                                                  owl:equivalentClass odang:Situation .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#LexicalConcept
 <http://www.w3.org/ns/lemon/ontolex#LexicalConcept> rdf:type owl:Class ;
-                                                    owl:equivalentClass :LexicalConcept .
+                                                    owl:equivalentClass odang:LexicalConcept .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#LexicalEntry
 <http://www.w3.org/ns/lemon/ontolex#LexicalEntry> rdf:type owl:Class ;
-                                                  owl:equivalentClass :LexicalEntry .
+                                                  owl:equivalentClass odang:LexicalEntry .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#Word
 <http://www.w3.org/ns/lemon/ontolex#Word> rdf:type owl:Class ;
-                                          owl:equivalentClass :Word .
+                                          owl:equivalentClass odang:Word .
 
 
 ###  https://purl.archive.org/o-dang#Adjective
-:Adjective rdf:type owl:Class ;
-           rdfs:subClassOf :Word .
+odang:Adjective rdf:type owl:Class ;
+                rdfs:subClassOf odang:Word .
 
 
 ###  https://purl.archive.org/o-dang#Adverb
-:Adverb rdf:type owl:Class ;
-        rdfs:subClassOf :Word .
+odang:Adverb rdf:type owl:Class ;
+             rdfs:subClassOf odang:Word .
 
 
 ###  https://purl.archive.org/o-dang#Agent
-:Agent rdf:type owl:Class .
+odang:Agent rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#AnnotationScheme
-:AnnotationScheme rdf:type owl:Class ;
-                  rdfs:subClassOf :Description .
+odang:AnnotationScheme rdf:type owl:Class ;
+                       rdfs:subClassOf odang:Description .
 
 
 ###  https://purl.archive.org/o-dang#AnnotationValue
-:AnnotationValue rdf:type owl:Class ;
-                 rdfs:subClassOf :Description .
+odang:AnnotationValue rdf:type owl:Class ;
+                      rdfs:subClassOf odang:Description .
 
 
 ###  https://purl.archive.org/o-dang#CommunicativeSituation
-:CommunicativeSituation rdf:type owl:Class ;
-                        rdfs:subClassOf :Situation .
+odang:CommunicativeSituation rdf:type owl:Class ;
+                             rdfs:subClassOf odang:Situation .
 
 
 ###  https://purl.archive.org/o-dang#Concept
-:Concept rdf:type owl:Class ;
-         rdfs:comment "Concept"@en .
+odang:Concept rdf:type owl:Class ;
+              rdfs:comment "Concept"@en .
 
 
 ###  https://purl.archive.org/o-dang#Dataset
-:Dataset rdf:type owl:Class ;
-         rdfs:subClassOf :InformationObject .
+odang:Dataset rdf:type owl:Class ;
+              rdfs:subClassOf odang:InformationObject .
 
 
 ###  https://purl.archive.org/o-dang#Description
-:Description rdf:type owl:Class .
+odang:Description rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#Emotion
-:Emotion rdf:type owl:Class ;
-         rdfs:subClassOf :Concept .
+odang:Emotion rdf:type owl:Class ;
+              rdfs:subClassOf odang:Concept .
 
 
 ###  https://purl.archive.org/o-dang#Expression
-:Expression rdf:type owl:Class ;
-            owl:equivalentClass :InformationObject .
+odang:Expression rdf:type owl:Class ;
+                 owl:equivalentClass odang:InformationObject .
 
 
 ###  https://purl.archive.org/o-dang#HaSpeeDe2023Scheme
-:HaSpeeDe2023Scheme rdf:type owl:Class ;
-                    rdfs:subClassOf :AnnotationScheme .
+odang:HaSpeeDe2023Scheme rdf:type owl:Class ;
+                         rdfs:subClassOf odang:AnnotationScheme .
 
 
 ###  https://purl.archive.org/o-dang#HateSpeech
-:HateSpeech rdf:type owl:Class ;
-            rdfs:subClassOf :Concept .
+odang:HateSpeech rdf:type owl:Class ;
+                 rdfs:subClassOf odang:Concept .
 
 
 ###  https://purl.archive.org/o-dang#InformationObject
-:InformationObject rdf:type owl:Class .
+odang:InformationObject rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#LexicalConcept
-:LexicalConcept rdf:type owl:Class ;
-                rdfs:subClassOf :Concept .
+odang:LexicalConcept rdf:type owl:Class ;
+                     rdfs:subClassOf odang:Concept .
 
 
 ###  https://purl.archive.org/o-dang#LexicalEntry
-:LexicalEntry rdf:type owl:Class .
+odang:LexicalEntry rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#Manifestation
-:Manifestation rdf:type owl:Class .
+odang:Manifestation rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#Name
-:Name rdf:type owl:Class ;
-      rdfs:subClassOf :Word .
+odang:Name rdf:type owl:Class ;
+           rdfs:subClassOf odang:Word .
 
 
 ###  https://purl.archive.org/o-dang#Role
-:Role rdf:type owl:Class .
+odang:Role rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#Situation
-:Situation rdf:type owl:Class .
+odang:Situation rdf:type owl:Class .
 
 
 ###  https://purl.archive.org/o-dang#Text
-:Text rdf:type owl:Class ;
-      rdfs:subClassOf :InformationObject .
+odang:Text rdf:type owl:Class ;
+           rdfs:subClassOf odang:InformationObject .
 
 
 ###  https://purl.archive.org/o-dang#Verb
-:Verb rdf:type owl:Class ;
-      rdfs:subClassOf :Word .
+odang:Verb rdf:type owl:Class ;
+           rdfs:subClassOf odang:Word .
 
 
 ###  https://purl.archive.org/o-dang#Word
-:Word rdf:type owl:Class ;
-      rdfs:subClassOf :LexicalEntry .
+odang:Word rdf:type owl:Class ;
+           rdfs:subClassOf odang:LexicalEntry .
 
 
 #################################################################
@@ -699,78 +700,78 @@ wdt:P945 rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://purl.archive.org/o-dang#addressee
-:addressee rdf:type owl:NamedIndividual ,
-                    :Role .
+odang:addressee rdf:type owl:NamedIndividual ,
+                         odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#addresser
-:addresser rdf:type owl:NamedIndividual ,
-                    :Role .
+odang:addresser rdf:type owl:NamedIndividual ,
+                         odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#anger
-:anger rdf:type owl:NamedIndividual ,
-                :LexicalConcept .
+odang:anger rdf:type owl:NamedIndividual ,
+                     odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#anticipation
-:anticipation rdf:type owl:NamedIndividual ,
-                       :LexicalConcept .
+odang:anticipation rdf:type owl:NamedIndividual ,
+                            odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#disgust
-:disgust rdf:type owl:NamedIndividual ,
-                  :LexicalConcept .
+odang:disgust rdf:type owl:NamedIndividual ,
+                       odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#fear
-:fear rdf:type owl:NamedIndividual ,
-               :LexicalConcept .
+odang:fear rdf:type owl:NamedIndividual ,
+                    odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#first_pair
-:first_pair rdf:type owl:NamedIndividual ,
-                     :Role .
+odang:first_pair rdf:type owl:NamedIndividual ,
+                          odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#individuo
-:individuo rdf:type owl:NamedIndividual ;
-           rdfs:label "individuo di prova"@it .
+odang:individuo rdf:type owl:NamedIndividual ;
+                rdfs:label "individuo di prova"@it .
 
 
 ###  https://purl.archive.org/o-dang#joy
-:joy rdf:type owl:NamedIndividual ,
-              :LexicalConcept .
+odang:joy rdf:type owl:NamedIndividual ,
+                   odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#named_entity
-:named_entity rdf:type owl:NamedIndividual ,
-                       :Role .
+odang:named_entity rdf:type owl:NamedIndividual ,
+                            odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#reply
-:reply rdf:type owl:NamedIndividual ,
-                :Role .
+odang:reply rdf:type owl:NamedIndividual ,
+                     odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#sadness
-:sadness rdf:type owl:NamedIndividual ,
-                  :LexicalConcept .
+odang:sadness rdf:type owl:NamedIndividual ,
+                       odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#surprise
-:surprise rdf:type owl:NamedIndividual ,
-                   :LexicalConcept .
+odang:surprise rdf:type owl:NamedIndividual ,
+                        odang:LexicalConcept .
 
 
 ###  https://purl.archive.org/o-dang#target
-:target rdf:type owl:NamedIndividual ,
-                 :Role .
+odang:target rdf:type owl:NamedIndividual ,
+                      odang:Role .
 
 
 ###  https://purl.archive.org/o-dang#trust
-:trust rdf:type owl:NamedIndividual ,
-                :LexicalConcept .
+odang:trust rdf:type owl:NamedIndividual ,
+                     odang:LexicalConcept .
 
 
 #################################################################
@@ -778,10 +779,10 @@ wdt:P945 rdf:type owl:ObjectProperty ;
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Adjective
-                :Adverb
-                :Name
-                :Verb
+  owl:members ( odang:Adjective
+                odang:Adverb
+                odang:Name
+                odang:Verb
               )
 ] .
 
