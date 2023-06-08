@@ -1,0 +1,685 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <https://purl.archive.org/o-dang#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos1: <http://www.w3.org/2008/05/skos#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+
+<urn:MAPID-aa4b8f09557547eaae97f3e070eb45de> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{twt}"
+        ];
+      rr:predicate :isSettingFor
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from (select training_textual.anonymized_tweet_id as twt, training_textual.situation as sit , refersTo.odang_person as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is null"
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{sit}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-aa4b8f09557547eaae97f3e070eb45de(0)-fde14f5c-17c8-48a3-94ee-b4432d76feb2>
+  a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from (select training_textual.anonymized_tweet_id as twt, training_textual.situation as sit , refersTo.odang_person as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is not null"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate :isSettingFor;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{twt}";
+          rr:termType rr:IRI
+        ]
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{pers}"
+        ];
+      rr:predicate :refersTo
+    ], [ a rr:PredicateObjectMap;
+      rr:object :named-entity;
+      rr:predicate :isSettingFor
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{sit}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-aa4b8f09557547eaae97f3e070eb45de(0)-98a9e43f-a448-42d2-a8c3-2e53e23474db>
+  a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :named-entity;
+      rr:predicate :hasRole
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{pers}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from (select training_textual.anonymized_tweet_id as twt, training_textual.situation as sit , refersTo.odang_person as pers from training_textual left join refersTo on training_textual.anonymized_tweet_id = refersTo.anonymized_tweet_id) as Q1 where pers is not null"
+    ] .
+
+<urn:MAPID-6cd4a84b1d5141059428198844f2091b-fb54c76e-5791-4121-9126-c72edb1df549>
+  a rr:TriplesMap;
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}";
+      rr:termType rr:IRI
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{lemma}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate :hasPart
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from twt_hurt"
+    ] .
+
+<urn:MAPID-6cd4a84b1d5141059428198844f2091b-354bf08f-85d5-4a85-a584-718a24333fa8>
+  a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{category}"
+        ];
+      rr:predicate :evokes
+    ], [ a rr:PredicateObjectMap;
+      rr:predicate :offensivenessScore;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:datatype xsd:long;
+          rr:column "offensiveness_score";
+          rr:termType rr:Literal
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{lemma}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from twt_hurt"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf> a rr:TriplesMap;
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}";
+      rr:termType rr:IRI
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :anger;
+      rr:predicate :evokes
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,anger from twt_emo where anger = 1"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,anticipation from twt_emo where anticipation = 1"
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :anticipation;
+      rr:predicate :evokes
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :trust;
+      rr:predicate :evokes
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,trust from twt_emo where trust = 1"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)(0)(0)> a rr:TriplesMap;
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :sadness;
+      rr:predicate :evokes
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,sadness from twt_emo where sadness = 1"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :joy;
+      rr:predicate :evokes
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,joy from twt_emo where joy = 1"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate :evokes;
+      rr:object :disgust
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,disgust from twt_emo where disgust = 1"
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:object :fear;
+      rr:predicate :evokes
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,fear from twt_emo where fear = 1"
+    ] .
+
+<urn:MAPID-c6ce6dc8bf77406e8bf1e1b49f1447cf(0)(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{anonymized_tweet_id}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate :evokes;
+      rr:object :surprise
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct anonymized_tweet_id,lemma,surprise from twt_emo where surprise = 1"
+    ] .
+
+<urn:MAPID-b8c297e396ce4354bd3c9fd83bd6979b> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P102"
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P102;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P102}";
+          rr:termType rr:IRI
+        ]
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P103"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P103}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P103
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)> a rr:TriplesMap;
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}";
+      rr:termType rr:IRI
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P1038}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P1038
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P1038"
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P106}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P106
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P106"
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}"
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P1066;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P1066}";
+          rr:termType rr:IRI
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P1066"
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P108;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P108}";
+          rr:termType rr:IRI
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}"
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P108"
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P119"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P119}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P119
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P1412;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P1412}"
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P1412"
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P172}"
+        ];
+      rr:predicate wdt:P172
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P172"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}"
+    ] .
+
+<urn:MAPID-2d9cb68533ff49208c7f45231b2d0882(0)(0)(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P166"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P166}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P166
+    ];
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{odangPerson}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P184}"
+        ];
+      rr:predicate wdt:P184
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P184"
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)> a rr:TriplesMap;
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P19"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P19;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P19}";
+          rr:termType rr:IRI
+        ]
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P20"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P20;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P20}"
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)(0)(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P21"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P21;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P21}";
+          rr:termType rr:IRI
+        ]
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P22;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P22}"
+        ]
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P22"
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P25;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P25}"
+        ]
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P25"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:subjectMap [ a rr:TermMap, rr:SubjectMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P26"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P26;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P26}"
+        ]
+    ] .
+
+<urn:MAPID-226e0e88fb17473d8bb59a3682ae0134(0)(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P2632}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P2632
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:termType rr:IRI;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}"
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P2632"
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324> a rr:TriplesMap;
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P27"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P27;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P27}"
+        ]
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)> a rr:TriplesMap;
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P3373"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P3373}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P3373
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)(0)> a rr:TriplesMap;
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P39"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P39;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P39}";
+          rr:termType rr:IRI
+        ]
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P40}"
+        ];
+      rr:predicate wdt:P40
+    ];
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P40"
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P463"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P463;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P463}";
+          rr:termType rr:IRI
+        ]
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:template "https://purl.archive.org/o-dang#{P53}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P53
+    ];
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P53"
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P551;
+      rr:objectMap [ a rr:TermMap, rr:ObjectMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P551}"
+        ]
+    ];
+  rr:subject :odang_person;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P551"
+    ] .
+
+<urn:MAPID-7f66c3dc3b0143f8b0888fd5e9aa4324(0)(0)(0)(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P569}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P569
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P569"
+    ];
+  rr:subject :odang_person .
+
+<urn:MAPID-5c7a3bf319b640f8a4bcb1bc446df267> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P611}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate wdt:P611
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P611"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-5c7a3bf319b640f8a4bcb1bc446df267(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P6886"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P6886;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P6886}";
+          rr:termType rr:IRI
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-5c7a3bf319b640f8a4bcb1bc446df267(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:predicate wdt:P802;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "https://purl.archive.org/o-dang#{P802}";
+          rr:termType rr:IRI
+        ]
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P802"
+    ] .
+
+<urn:MAPID-5c7a3bf319b640f8a4bcb1bc446df267(0)(0)(0)> a rr:TriplesMap;
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P937}"
+        ];
+      rr:predicate wdt:P937
+    ];
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P937"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-5c7a3bf319b640f8a4bcb1bc446df267(0)(0)(0)(0)> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select distinct * from P945"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:termType rr:IRI;
+          rr:template "https://purl.archive.org/o-dang#{P945}"
+        ];
+      rr:predicate wdt:P945
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "https://purl.archive.org/o-dang#{odang_person}";
+      rr:termType rr:IRI
+    ] .
